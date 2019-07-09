@@ -72,7 +72,10 @@ if( isset($data['do_refact']) )
         echo '<div id="errors">'.array_shift($errors).'</div><hr>';
     }
 
-}
+} ?>
+
+
+<?php
 
 if ($_SESSION['logged_user']->id==1){
 echo 'АДМИН и ты можешь:';
@@ -94,52 +97,37 @@ echo 'АДМИН и ты можешь:';
         <br>
     </form>
 
+
     <form action="profile.php" method="post">
-        <?php
-        $users = R::find('users', "id > ?", array(1));
-        foreach ($users as $user) { ?>
-            <div class="name">
-                <?= $user->name ?>
-                <?= $user->last_name ?>
-                <select size="1">
-                    <option disabled selected><?
-                        if ($user->moderator == 0) {
-                            echo "Не модер";
-                        } else {
-                            echo "Модер";
-                        } ?>
-                    </option>
-                    <?php
-                    if ($user->moderator == 0) {
-                        ?>
-                        <option<?php if ($user->moderator == 1) { ?> value="1" <?php
-                        } ?>>Модер
-                        </option>
-                        <?php
-                    } else {
-                        ?>
-                        <option value="0">Не модер</option>
-                        <?php
-                    }
-                    ?>
-                </select>
-
-            </div>
-            <?php
-            $data = $_POST;
-            if ($data['do_moderate']) {
-                $moderate_id = $user->id;
-                $moderate = R::load('users', $moderate_id);
-                if ($data['moderate'] != '') {
-                    echo $moderate->moderator;
-
-                }
+    <?php
+    $users = R::find('users', 'id > 1');
+    foreach ($users as $user){
+        $user_id = $user->id;
+        $data = $_POST;
+        if( isset($data['do_moder']) )
+        {
+            $user_mod = R::load('users', $user_id);
+            if ($data['moderator'] != ''){
+                $user_mod->moderator = $data['moderator'];
             }
-        }?>
-        <button type="submit" name="do_moderate">Сохранить</button>
+            R::store($user_mod);
+//        header('Location: _profile.php');
+
+        } ?>
+            <?php echo $user_mod->id; ?>
+            <?php echo $user_mod->name; ?>
+            <p>Модерка<br/>
+                <input type="text" name="moderator" placeholder="<?php echo $user_mod->moderator; ?>" value="<?php echo @$data['moderator']; ?>">
+            </p>
+            <p>
+                <button type="submit" name="do_moder">Сохранить</button>
+            </p>
+
+        <?php
+    } ?>
     </form>
     <?php
-    }
+}
     else {
         echo 'НЕ АДМИН ниче не можешь';
         ?>

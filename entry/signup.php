@@ -42,7 +42,7 @@
             $user->name = $data['name'];
             $user->last_name = $data['last_name'];
             $user->email = $data['email'];
-            $user->moderator = 0;
+            $user->moderator = 'no_moder';
             $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
             R::store($user);
             header('Location: login.php');
