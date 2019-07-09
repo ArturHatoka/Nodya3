@@ -1,0 +1,176 @@
+html {
+  font-size: 18px;
+  font-family: "Times New Roman", sans-serif;
+  box-sizing: border-box;
+  margin: 0; }
+
+body {
+  position: relative;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  background: azure; }
+
+header, main, footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0; }
+
+nav, section {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center; }
+
+a {
+  color: black;
+  text-decoration: none; }
+
+.header {
+  flex-direction: column; }
+  .header-head {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around; }
+    .header-head__logo {
+      position: relative;
+      display: flex;
+      width: 20%;
+      max-width: 100px; }
+    .header-head__title {
+      position: relative;
+      display: flex;
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #ff520c; }
+    .header-head__entry {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 25%;
+      min-width: 135px; }
+      .header-head__entry-login, .header-head__entry-signup {
+        position: relative;
+        display: flex;
+        background: #ff520c;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        margin: 5px; }
+        .header-head__entry-login:hover, .header-head__entry-signup:hover {
+          background: #9f3406; }
+      .header-head__entry-user {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; }
+        .header-head__entry-user--name {
+          position: relative;
+          display: flex;
+          font-weight: bold;
+          align-items: center;
+          justify-content: center;
+          width: 100%; }
+        .header-head__entry-user--logout, .header-head__entry-user--publicate {
+          position: relative;
+          display: flex;
+          background: #ff520c;
+          color: white;
+          padding: 5px 15px;
+          border-radius: 20px;
+          margin: 5px; }
+          .header-head__entry-user--logout:hover, .header-head__entry-user--publicate:hover {
+            background: #9f3406; }
+  .header-subtitle {
+    font-size: 1.1rem;
+    text-align: center; }
+  .header-nav {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    width: 85%;
+    align-items: center;
+    justify-content: center;
+    background: #ff520c;
+    border-radius: 20px;
+    flex-wrap: wrap; }
+    .header-nav__item {
+      position: relative;
+      display: flex;
+      background: white;
+      border: 1px solid black;
+      padding: 5px 20px;
+      border-radius: 20px;
+      margin: 5px; }
+      .header-nav__item.active {
+        background: #9f3406;
+        color: #fff; }
+      .header-nav__item:hover {
+        background: #9f3406;
+        color: #fff; }
+
+.main {
+  flex-direction: column; }
+  .main-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 85%;
+    margin: 15px; }
+    .main-text__par {
+      margin: 0; }
+      .main-text__par:first-letter {
+        padding-left: 40px; }
+  .main-row {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 85%;
+    align-items: flex-start;
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #9b9b9b;
+    border-radius: 20px; }
+    .main-row__title {
+      display: flex;
+      position: relative;
+      flex-wrap: wrap;
+      padding: 0 5px; }
+      .main-row__title-autor {
+        margin: 0 5px;
+        color: #ff520c;
+        font-weight: bold; }
+      .main-row__title-name {
+        margin: 0 5px;
+        color: #9f3406;
+        font-weight: bold; }
+      .main-row__title-category {
+        margin: 0 5px;
+        font-style: italic;
+        font-weight: bold; }
+    .main-row__description {
+      padding: 0 10px;
+      margin: 5px 0; }
+    .main-row__read {
+      position: relative;
+      display: flex;
+      background: #ff520c;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      margin: 5px; }
+      .main-row__read:hover {
+        background: #9f3406; }
